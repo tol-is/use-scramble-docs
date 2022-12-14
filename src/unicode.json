@@ -1,0 +1,477 @@
+[
+  {
+    "Glyph": "&nbsp;",
+    "Unicode": "32",
+    "Description": "Space mark"
+  },
+  {
+    "Glyph": "!",
+    "Unicode": "33",
+    "Description": "Exclamation mark"
+  },
+  {
+    "Glyph": "\"",
+    "Unicode": "34",
+    "Description": "Quotation mark"
+  },
+  {
+    "Glyph": "#",
+    "Unicode": "35",
+    "Description": "Hash"
+  },
+  {
+    "Glyph": "$",
+    "Unicode": "36",
+    "Description": "Dollar sign"
+  },
+  {
+    "Glyph": "%",
+    "Unicode": "37",
+    "Description": "Percent sign"
+  },
+  {
+    "Glyph": "&",
+    "Unicode": "38",
+    "Description": "Ampersand"
+  },
+  {
+    "Glyph": "'",
+    "Unicode": "39",
+    "Description": "Apostrophe"
+  },
+  {
+    "Glyph": "(",
+    "Unicode": "40",
+    "Description": "Left parenthesis"
+  },
+  {
+    "Glyph": ")",
+    "Unicode": "41",
+    "Description": "Right parenthesis"
+  },
+  {
+    "Glyph": "*",
+    "Unicode": "42",
+    "Description": "Asterisk"
+  },
+  {
+    "Glyph": "+",
+    "Unicode": "43",
+    "Description": "Plus sign"
+  },
+  {
+    "Glyph": ",",
+    "Unicode": "44",
+    "Description": "Comma"
+  },
+  {
+    "Glyph": "-",
+    "Unicode": "45",
+    "Description": "Hyphen-minus"
+  },
+  {
+    "Glyph": ".",
+    "Unicode": "46",
+    "Description": "Full stop"
+  },
+  {
+    "Glyph": "/",
+    "Unicode": "47",
+    "Description": "Slash (Solidus)"
+  },
+  {
+    "Glyph": "0",
+    "Unicode": "48",
+    "Description": "Digit Zero"
+  },
+  {
+    "Glyph": "1",
+    "Unicode": "49",
+    "Description": "Digit One"
+  },
+  {
+    "Glyph": "2",
+    "Unicode": "50",
+    "Description": "Digit Two"
+  },
+  {
+    "Glyph": "3",
+    "Unicode": "51",
+    "Description": "Digit Three"
+  },
+  {
+    "Glyph": "4",
+    "Unicode": "52",
+    "Description": "Digit Four"
+  },
+  {
+    "Glyph": "5",
+    "Unicode": "53",
+    "Description": "Digit Five"
+  },
+  {
+    "Glyph": "6",
+    "Unicode": "54",
+    "Description": "Digit Six"
+  },
+  {
+    "Glyph": "7",
+    "Unicode": "55",
+    "Description": "Digit Seven"
+  },
+  {
+    "Glyph": "8",
+    "Unicode": "56",
+    "Description": "Digit Eight"
+  },
+  {
+    "Glyph": "9",
+    "Unicode": "57",
+    "Description": "Digit Nine"
+  },
+  {
+    "Glyph": ":",
+    "Unicode": "58",
+    "Description": "Colon"
+  },
+  {
+    "Glyph": ";",
+    "Unicode": "59",
+    "Description": "Semicolon"
+  },
+  {
+    "Glyph": "<",
+    "Unicode": "60",
+    "Description": "Less-than sign"
+  },
+  {
+    "Glyph": "=",
+    "Unicode": "61",
+    "Description": "Equal sign"
+  },
+  {
+    "Glyph": ">",
+    "Unicode": "62",
+    "Description": "Greater-than sign"
+  },
+  {
+    "Glyph": "?",
+    "Unicode": "63",
+    "Description": "Question mark"
+  },
+  {
+    "Glyph": "@",
+    "Unicode": "64",
+    "Description": "At sign"
+  },
+  {
+    "Glyph": "A",
+    "Unicode": "65",
+    "Description": "Latin Capital letter A"
+  },
+  {
+    "Glyph": "B",
+    "Unicode": "66",
+    "Description": "Latin Capital letter B"
+  },
+  {
+    "Glyph": "C",
+    "Unicode": "67",
+    "Description": "Latin Capital letter C"
+  },
+  {
+    "Glyph": "D",
+    "Unicode": "68",
+    "Description": "Latin Capital letter D"
+  },
+  {
+    "Glyph": "E",
+    "Unicode": "69",
+    "Description": "Latin Capital letter E"
+  },
+  {
+    "Glyph": "F",
+    "Unicode": "70",
+    "Description": "Latin Capital letter F"
+  },
+  {
+    "Glyph": "G",
+    "Unicode": "71",
+    "Description": "Latin Capital letter G"
+  },
+  {
+    "Glyph": "H",
+    "Unicode": "72",
+    "Description": "Latin Capital letter H"
+  },
+  {
+    "Glyph": "I",
+    "Unicode": "73",
+    "Description": "Latin Capital letter I"
+  },
+  {
+    "Glyph": "J",
+    "Unicode": "74",
+    "Description": "Latin Capital letter J"
+  },
+  {
+    "Glyph": "K",
+    "Unicode": "75",
+    "Description": "Latin Capital letter K"
+  },
+  {
+    "Glyph": "L",
+    "Unicode": "76",
+    "Description": "Latin Capital letter L"
+  },
+  {
+    "Glyph": "M",
+    "Unicode": "77",
+    "Description": "Latin Capital letter M"
+  },
+  {
+    "Glyph": "N",
+    "Unicode": "78",
+    "Description": "Latin Capital letter N"
+  },
+  {
+    "Glyph": "O",
+    "Unicode": "79",
+    "Description": "Latin Capital letter O"
+  },
+  {
+    "Glyph": "P",
+    "Unicode": "80",
+    "Description": "Latin Capital letter P"
+  },
+  {
+    "Glyph": "Q",
+    "Unicode": "81",
+    "Description": "Latin Capital letter Q"
+  },
+  {
+    "Glyph": "R",
+    "Unicode": "82",
+    "Description": "Latin Capital letter R"
+  },
+  {
+    "Glyph": "S",
+    "Unicode": "83",
+    "Description": "Latin Capital letter S"
+  },
+  {
+    "Glyph": "T",
+    "Unicode": "84",
+    "Description": "Latin Capital letter T"
+  },
+  {
+    "Glyph": "U",
+    "Unicode": "85",
+    "Description": "Latin Capital letter U"
+  },
+  {
+    "Glyph": "V",
+    "Unicode": "86",
+    "Description": "Latin Capital letter V"
+  },
+  {
+    "Glyph": "W",
+    "Unicode": "87",
+    "Description": "Latin Capital letter W"
+  },
+  {
+    "Glyph": "X",
+    "Unicode": "88",
+    "Description": "Latin Capital letter X"
+  },
+  {
+    "Glyph": "Y",
+    "Unicode": "89",
+    "Description": "Latin Capital letter Y"
+  },
+  {
+    "Glyph": "Z",
+    "Unicode": "90",
+    "Description": "Latin Capital letter Z"
+  },
+  {
+    "Glyph": "[",
+    "Unicode": "91",
+    "Description": "Left Square Bracket"
+  },
+  {
+    "Glyph": "\\",
+    "Unicode": "92",
+    "Description": "Backslash"
+  },
+  {
+    "Glyph": "]",
+    "Unicode": "93",
+    "Description": "Right Square Bracket"
+  },
+  {
+    "Glyph": "^",
+    "Unicode": "94",
+    "Description": "Circumflex accent"
+  },
+  {
+    "Glyph": "_",
+    "Unicode": "95",
+    "Description": "Low line"
+  },
+  {
+    "Glyph": "`",
+    "Unicode": "96",
+    "Description": "Grave accent"
+  },
+  {
+    "Glyph": "a",
+    "Unicode": "97",
+    "Description": "Latin Small Letter A"
+  },
+  {
+    "Glyph": "b",
+    "Unicode": "98",
+    "Description": "Latin Small Letter B"
+  },
+  {
+    "Glyph": "c",
+    "Unicode": "99",
+    "Description": "Latin Small Letter C"
+  },
+  {
+    "Glyph": "d",
+    "Unicode": "100",
+    "Description": "Latin Small Letter D"
+  },
+  {
+    "Glyph": "e",
+    "Unicode": "101",
+    "Description": "Latin Small Letter E"
+  },
+  {
+    "Glyph": "f",
+    "Unicode": "102",
+    "Description": "Latin Small Letter F"
+  },
+  {
+    "Glyph": "g",
+    "Unicode": "103",
+    "Description": "Latin Small Letter G"
+  },
+  {
+    "Glyph": "h",
+    "Unicode": "104",
+    "Description": "Latin Small Letter H"
+  },
+  {
+    "Glyph": "i",
+    "Unicode": "105",
+    "Description": "Latin Small Letter I"
+  },
+  {
+    "Glyph": "j",
+    "Unicode": "106",
+    "Description": "Latin Small Letter J"
+  },
+  {
+    "Glyph": "k",
+    "Unicode": "107",
+    "Description": "Latin Small Letter K"
+  },
+  {
+    "Glyph": "l",
+    "Unicode": "108",
+    "Description": "Latin Small Letter L"
+  },
+  {
+    "Glyph": "m",
+    "Unicode": "109",
+    "Description": "Latin Small Letter M"
+  },
+  {
+    "Glyph": "n",
+    "Unicode": "110",
+    "Description": "Latin Small Letter N"
+  },
+  {
+    "Glyph": "o",
+    "Unicode": "111",
+    "Description": "Latin Small Letter O"
+  },
+  {
+    "Glyph": "p",
+    "Unicode": "112",
+    "Description": "Latin Small Letter P"
+  },
+  {
+    "Glyph": "q",
+    "Unicode": "113",
+    "Description": "Latin Small Letter Q"
+  },
+  {
+    "Glyph": "r",
+    "Unicode": "114",
+    "Description": "Latin Small Letter R"
+  },
+  {
+    "Glyph": "s",
+    "Unicode": "115",
+    "Description": "Latin Small Letter S"
+  },
+  {
+    "Glyph": "t",
+    "Unicode": "116",
+    "Description": "Latin Small Letter T"
+  },
+  {
+    "Glyph": "u",
+    "Unicode": "117",
+    "Description": "Latin Small Letter U"
+  },
+  {
+    "Glyph": "v",
+    "Unicode": "118",
+    "Description": "Latin Small Letter V"
+  },
+  {
+    "Glyph": "w",
+    "Unicode": "119",
+    "Description": "Latin Small Letter W"
+  },
+  {
+    "Glyph": "x",
+    "Unicode": "120",
+    "Description": "Latin Small Letter X"
+  },
+  {
+    "Glyph": "y",
+    "Unicode": "121",
+    "Description": "Latin Small Letter Y"
+  },
+  {
+    "Glyph": "z",
+    "Unicode": "122",
+    "Description": "Latin Small Letter Z"
+  },
+  {
+    "Glyph": "{",
+    "Unicode": "123",
+    "Description": "Left Curly Bracket"
+  },
+  {
+    "Glyph": "|",
+    "Unicode": "124",
+    "Description": "Vertical bar"
+  },
+  {
+    "Glyph": "}",
+    "Unicode": "125",
+    "Description": "Right Curly Bracket"
+  },
+  {
+    "Glyph": "~",
+    "Unicode": "126",
+    "Description": "Tilde"
+  }
+]

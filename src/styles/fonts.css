@@ -1,0 +1,89 @@
+@font-face {
+  font-family: "Peridot";
+  font-display: swap;
+  font-weight: 400;
+  font-style: normal;
+  src: url("./Peridot/peridotpe-regular.woff2.woff2") format("woff2");
+  unicode-range: U+0000-00FF;
+}
+
+@font-face {
+  font-family: "Peridot";
+  font-display: swap;
+  font-weight: 400;
+  font-style: italic;
+  src: url("./Peridot/peridotpe-italic.woff2.woff2") format("woff2");
+  unicode-range: U+0000-00FF;
+}
+
+@font-face {
+  font-family: "Peridot";
+  font-display: swap;
+  font-weight: 600;
+  font-style: normal;
+  src: url("./Peridot/peridotpe-semibold.woff2.woff2") format("woff2");
+  unicode-range: U+0000-00FF;
+}
+
+@font-face {
+  font-family: "Peridot";
+  font-display: swap;
+  font-weight: 600;
+  font-style: italic;
+  src: url("./Peridot/peridotpe-semibolditalic.woff2.woff2") format("woff2");
+  unicode-range: U+0000-00FF;
+}
+
+@font-face {
+  font-family: "Peridot";
+  font-display: swap;
+  font-weight: 700;
+  font-style: normal;
+  src: url("./Peridot/peridotpe-bold.woff2.woff2") format("woff2");
+  unicode-range: U+0000-00FF;
+}
+
+@font-face {
+  font-family: "Peridot";
+  font-display: swap;
+  font-weight: 700;
+  font-style: italic;
+  src: url("./Peridot/peridotpe-bolditalic.woff2.woff2") format("woff2");
+  unicode-range: U+0000-00FF;
+}
+
+@font-face {
+  font-family: "Monolisa";
+  font-display: swap;
+  font-weight: 400;
+  font-style: normal;
+  src: url("./Monolisa/MonoLisa-Regular.ttf.woff2") format("woff2");
+  unicode-range: U+0000-00FF;
+}
+
+@font-face {
+  font-family: "Monolisa";
+  font-display: swap;
+  font-weight: 400;
+  font-style: italic;
+  src: url("./Monolisa/MonoLisa-RegularItalic.ttf.woff2") format("woff2");
+  unicode-range: U+0000-00FF;
+}
+
+@font-face {
+  font-family: "Monolisa";
+  font-display: swap;
+  font-weight: 700;
+  font-style: normal;
+  src: url("./Monolisa/MonoLisa-Bold.ttf.woff2") format("woff2");
+  unicode-range: U+0000-00FF;
+}
+
+@font-face {
+  font-family: "Monolisa";
+  font-display: swap;
+  font-weight: 700;
+  font-style: italic;
+  src: url("./Monolisa/MonoLisa-BoldItalic.ttf.woff2") format("woff2");
+  unicode-range: U+0000-00FF;
+}
