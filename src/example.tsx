@@ -5,16 +5,17 @@ import { LevaPanel } from "leva"
 import { ScrambleLevaProps, useScrambledLeva } from "./use-scrambled-leva"
 
 type Props = ScrambleLevaProps & {
-  description?: string
+  description?: () => React.ReactNode
 }
 
 export const Example = (p: Props) => {
   const { store, ref, replay } = useScrambledLeva(p)
 
+  const Copm: any = p.description
   return (
     <section className="example" data-block="example">
       <div className="content prose">
-        {p.description ? <p>{p.description}</p> : null}
+        {Copm ? <Copm /> : null}
         <p className="sample" ref={ref} onClick={replay} />
       </div>
       <div className="levas">

@@ -17,20 +17,21 @@
   --colors-loContrast: var(--colors-gray10);
   --colors-accent: #4bf3c8;
 
-  --space-xl: calc(5rem + 6vmax);
-  --space-lg: calc(4rem + 5vmax);
-  --space-md: calc(3rem + 4vmax);
+  --space-xl: calc(7rem + 5vmax);
+  --space-lg: calc(5rem + 4vmax);
+  --space-md: calc(3rem + 3vmax);
   --space-sm: calc(0.5rem + 1vmax);
   --space-xs: 0.35rem;
   --gutter: calc(8px + 1.2vw);
   --font: "Peridot", sans-serif;
-  --font-mono: "Monolisa", monospace;
+  --font-mono: "Monolisa", monospace !important;
 
   /* leva overrides */
   --leva-colors-elevation2: var(--colors-bg) !important;
   --leva-colors-elevation3: var(--colors-gray4) !important;
   --leva-colors-accent1: var(--colors-accent) !important;
   --leva-colors-accent2: var(--colors-accent) !important;
+  --leva-colors-accent3: var(--colors-accent) !important;
   --leva-colors-highlight3: var(--colors-gray1) !important;
   --leva-fonts-mono: "Monolisa", monospace !important;
 }
@@ -69,9 +70,9 @@ h3 {
   color: var(--colors-hiContrast);
 }
 h4 {
-  font-size: 17;
+  font-size: 16px;
   font-weight: 600;
-  color: var(--colors-loContrast);
+  color: var(--colors-hiContrast);
 }
 
 #root > header {
@@ -96,13 +97,13 @@ h4 {
 
 #root > footer {
   flex: 1;
-  padding: var(--space-sm) var(--gutter) var(--space-xs) var(--gutter);
+  padding: var(--space-sm) var(--gutter) var(--space-sm) var(--gutter);
   width: auto;
   margin: 0 auto 0 auto;
   display: flex;
-  justify-content: space-between;
+  justify-content: flex-end;
   align-items: baseline;
-  font-size: 12px;
+  font-size: 15px;
 }
 
 #root > header code {
@@ -111,35 +112,55 @@ h4 {
 
 #root > header .links {
   display: flex;
-  flex-direction: column;
-  gap: var(--space-xs);
-  text-align: right;
+  gap: var(--space-sm);
+  align-items: center;
+  justify-items: flex-end;
+}
+
+a.version {
+  padding: 4px 6px;
+  border: 1px solid var(--colors-hiContrast);
+  color: var(--colors-hiContrast);
+  outline-offset: 3px;
+}
+
+a.version:hover,
+a.version:focus {
+  border: 1px solid var(--colors-accent);
+  color: var(--colors-accent);
+  outline: none;
+}
+
+a.version > span {
+  pointer-events: none;
 }
 
 #root > header a {
-  font-size: 15px;
+  font-family: var(--font-mono);
+  font-weight: 400;
+  font-size: 14px;
 }
 
 a {
   text-decoration: none;
   font-weight: 600;
-  color: var(--colors-loContrast);
+  color: var(--colors-hiContrast);
   position: relative;
   overflow: visible;
 }
 
 a:before {
   position: absolute;
-  top: -0.5rem;
+  top: 0;
   left: -0.5rem;
   content: " ";
   display: block;
   width: calc(100% + 1rem);
-  height: calc(100% + 1rem);
 }
 
-a:focus:not(:focus-visible) {
-  outline: none;
+a:focus-visible {
+  outline: 1px solid var(--colors-accent);
+  outline-offset: 3px;
 }
 
 a:focus,
@@ -164,18 +185,13 @@ a:hover {
 .prose h2 {
   display: block;
   margin-top: var(--space-xl);
-  margin-bottom: var(--space-md);
-}
-
-.prose h4 {
-  margin-top: calc(var(--space-sm) * 2);
-  margin-bottom: var(--space-xs);
+  margin-bottom: var(--space-lg);
 }
 
 .prop-heading {
   display: flex;
   align-items: baseline;
-  gap: 1rem;
+  gap: var(--space-xs);
   margin-top: var(--space-md);
   margin-bottom: calc(var(--space-sm) - 4px);
   padding-bottom: var(--space-xs);
@@ -183,6 +199,7 @@ a:hover {
 }
 
 .prop-heading code {
+  font-size: 14px;
   color: var(--colors-loContrast);
 }
 
@@ -196,13 +213,30 @@ a:hover {
   border-collapse: collapse;
 }
 
-table tr:first-child > * {
+table thead tr th {
+  font-size: 18px;
   padding-bottom: var(--space-xs);
   border-bottom: 1px solid var(--colors-border);
 }
 
-table tr:nth-child(2) > * {
+table tbody tr {
+  transition: color 1s ease-out;
+  transition-delay: 0s;
+}
+
+table tbody tr:hover {
+  color: var(--colors-hiContrast);
+  transition: color 0s ease-out;
+}
+table tbody tr:first-child td {
   padding-top: var(--space-sm);
+}
+
+table tbody tr td:first-child {
+  width: 8rem;
+}
+table tbody tr td:nth-child(2) {
+  width: 8rem;
 }
 
 tr {
@@ -213,6 +247,10 @@ th {
   text-align: left;
   color: var(--colors-hiContrast);
   padding-bottom: var(--space-sm);
+}
+
+li {
+  margin: var(--space-xs) 0;
 }
 
 .prose > p:first-of-type {
@@ -248,7 +286,16 @@ th {
   margin-top: -5px;
 }
 
+.levas button:focus {
+  outline: 1px solid var(--colors-accent);
+}
+.levas input::selection {
+  color: white;
+  background-color: transparent;
+}
+
 .example .sample {
-  font-size: 16px;
+  font-size: 14px;
+  font-family: var(--font-mono);
   color: var(--colors-hiContrast);
 }

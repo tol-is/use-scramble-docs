@@ -15,20 +15,32 @@ const getRandomText = () => {
   return tragedy[int]
 }
 
-const existsOrDefault = (n: any, def: any) => (n !== undefined && n !== null ? n : def)
-
 const levaTypes = {
-  overdrive: { value: true },
-  overdriveNumber: { value: 95 },
+  overdrive: { value: false },
+  overdriveNumber: { value: 46 },
   rangeTruple: { value: [45, 46, 47], joystick: false },
-  range: { value: [60, 125], joystick: false },
-  speed: { value: 0.4, min: 0, max: 1, step: 0.01 },
-  scramble: { value: 5, min: 0, max: 42, step: 1 },
+  range: { value: [65, 125], joystick: false },
+  speed: { value: 1, min: 0, max: 1, step: 0.01 },
+  scramble: { value: 5, min: 0, max: 100, step: 1 },
   step: { value: 2, min: 1, max: 10, step: 1 },
-  tick: { value: 1, min: 1, max: 20, step: 1 },
-  seed: { value: 2, min: 0, max: 42, step: 1 },
-  overflow: { value: true },
+  tick: { value: 1, min: 1, max: 10, step: 1 },
+  seed: { value: 2, min: 0, max: 10, step: 1 },
+  overflow: { value: false },
 }
+
+const defaults = {
+  overdrive: false,
+  range: [65, 125],
+  speed: 1,
+  scramble: 5,
+  step: 5,
+  tick: 1,
+  seed: 2,
+  overflow: false,
+}
+
+const existsOrDefault = (n: any, param: any, def: any) =>
+  n !== undefined && n !== null ? n : param !== undefined && param !== null ? param : def
 
 const levaTypeMap = {
   overdrive: "overdrive",
@@ -76,14 +88,14 @@ export const useScrambledLeva = ({ levas, params }: ScrambleLevaProps) => {
   const { ref, replay } = useScramble({
     text: sample,
     playOnMount: false,
-    range: existsOrDefault(values[`${id}range`], params.range),
-    speed: existsOrDefault(values[`${id}speed`], params.speed),
-    tick: existsOrDefault(values[`${id}tick`], params.tick),
-    step: existsOrDefault(values[`${id}step`], params.step),
-    scramble: existsOrDefault(values[`${id}scramble`], params.scramble),
-    seed: existsOrDefault(values[`${id}seed`], params.seed),
-    overdrive: existsOrDefault(values[`${id}overdrive`], params.overdrive),
-    overflow: existsOrDefault(values[`${id}overflow`], params.overflow),
+    range: existsOrDefault(values[`${id}range`], params.range, defaults.range),
+    speed: existsOrDefault(values[`${id}speed`], params.speed, defaults.speed),
+    tick: existsOrDefault(values[`${id}tick`], params.tick, defaults.tick),
+    step: existsOrDefault(values[`${id}step`], params.step, defaults.step),
+    scramble: existsOrDefault(values[`${id}scramble`], params.scramble, defaults.scramble),
+    seed: existsOrDefault(values[`${id}seed`], params.seed, defaults.seed),
+    overdrive: existsOrDefault(values[`${id}overdrive`], params.overdrive, defaults.overdrive),
+    overflow: existsOrDefault(values[`${id}overflow`], params.overflow, defaults.overflow),
   })
 
   useControls(
@@ -97,19 +109,21 @@ export const useScrambledLeva = ({ levas, params }: ScrambleLevaProps) => {
           setSample(sample)
         },
 
-        copy: (get) =>
+        copy: () => {
           copy(`
-        const { ref } = useScramble({
-          text: "${sample}",
-          speed: ${existsOrDefault(get("speed"), params.speed)},
-          scramble: ${existsOrDefault(get("scramble"), params.scramble)},
-          step: ${existsOrDefault(get("step"), params.step)},
-          tick: ${existsOrDefault(get("tick"), params.tick)},
-          seed: ${existsOrDefault(get("seed"), params.seed)},
-          overdrive: ${existsOrDefault(get("overdrive"), params.overdrive)},
-          overflow: ${existsOrDefault(get("overflow"), params.overflow)},
-        })
-        `),
+          const { ref } = useScramble({
+            text: "${sample}",
+            range: ${existsOrDefault(values[`${id}range`], params.range, defaults.range)},
+            speed: ${existsOrDefault(values[`${id}speed`], params.speed, defaults.speed)},
+            tick: ${existsOrDefault(values[`${id}tick`], params.tick, defaults.tick)},
+            step: ${existsOrDefault(values[`${id}step`], params.step, defaults.step)},
+            scramble: ${existsOrDefault(values[`${id}scramble`], params.scramble, defaults.scramble)},
+            seed: ${existsOrDefault(values[`${id}seed`], params.seed, defaults.seed)},
+            overdrive: ${existsOrDefault(values[`${id}overdrive`], params.overdrive, defaults.overdrive)},
+            overflow: ${existsOrDefault(values[`${id}overflow`], params.overflow, defaults.overflow)},
+          })
+          `)
+        },
 
         reset: () => {
           const p = levas.reduce((res, cur) => {
@@ -123,7 +137,7 @@ export const useScrambledLeva = ({ levas, params }: ScrambleLevaProps) => {
     }),
 
     { store: store },
-    [replay, levas],
+    [replay, levas, values],
   )
 
   return { store, ref, replay }
