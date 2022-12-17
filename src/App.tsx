@@ -82,8 +82,11 @@ export const App = () => {
           </header>
           <p>
             The <code>tick</code> parameter controls a secondary internal clock of the animation and measures how many frames must pass, for
-            the scrambler to move forward along the text input. It works in the opposite way to <code>speed</code>, slowing down the
-            animation, but does not affect how fast each position will randomize.
+            the scrambler to walk forward along the text input.
+          </p>
+          <p>
+            A higher value means It works in the opposite way to <code>speed</code>, slowing down the animation, but does not affect how
+            fast each position will randomize.
           </p>
 
           <Example
