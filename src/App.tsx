@@ -61,7 +61,8 @@ export const App = () => {
             text, and how fast each character position will scramble.
           </p>
           <p>
-            Speed of value <code>1</code> means a character can scramble up to 60 times a second. <code>0 will pause the animation</code>
+            Speed of value <code>1</code> means a character can scramble up to 60 times a second. Speed <code>0</code> will pause the
+            animation
           </p>
 
           <Example
