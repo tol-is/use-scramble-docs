@@ -2,7 +2,8 @@ import React from "react"
 
 import { Code } from "./code"
 
-const codeString = `const { ref, replay } = useScramble({ 
+const codeString = `// get replay function from hook
+const { ref, replay } = useScramble({ 
   text: "1.21 gigawatts!",
 });
 

@@ -46,11 +46,11 @@ const Item = ({ text }) => {
   return (
     <li style={{ marginBottom: "2rem" }}>
       <a
-        target="_blank"
         onFocus={() => setcopy(text[2])}
         onBlur={() => setcopy(text[0])}
         onMouseOver={() => setcopy(text[2])}
         onMouseLeave={() => setcopy(text[0])}
+        target="_blank"
         rel="noreferrer noopener"
         href={text[2]}
         ref={ref}

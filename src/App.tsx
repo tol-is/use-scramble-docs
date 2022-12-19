@@ -300,14 +300,22 @@ export const App = () => {
           <p>Callback triggered when the animation has finished</p>
           <h2>Reduced Motion</h2>
           <p>
-            People experiencing vertigo or motion sensitivities, can request to reduce the amount of non-essential motion, through their
-            operating system configuration. At the moment, the animation is entirely disabled when `prefers-reduced-motion` is enabled.
+            People experiencing vertigo or are sensisitve to motion, can request to reduce the amount of non-essential motion, through their
+            operating system configuration. At the moment, <code>prefers-reduced-motion</code> will simply disable the animation.
           </p>
 
           <h2>Unicode</h2>
           <Unicode />
           <h2>Credits</h2>
           <Credits />
+
+          <h2>Feedback</h2>
+          <p>
+            If you have ideas, suggestions or found a bug, please open an issue on{" "}
+            <Link label="github" href="https://github.com/tol-is/use-scramble/issues" target="_blank" rel="noreferrer noopener" />. If
+            you're using the library talk to me on{" "}
+            <Link label="twitter" href="https://twitter.com/tol__is" target="_blank" rel="noreferrer noopener" />.
+          </p>
         </div>
       </main>
       <footer>
