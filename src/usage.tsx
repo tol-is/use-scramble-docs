@@ -4,7 +4,7 @@ import { Code } from "./code"
 
 const codeString = `import { useScramble } from "use-scramble";
 
-const Component = ({ text }) => {
+const Component = () => {
 
   // hook returns a ref
   const { ref } = useScramble({ 
