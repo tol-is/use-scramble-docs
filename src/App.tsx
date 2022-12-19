@@ -7,6 +7,7 @@ import { Unicode } from "./unicode"
 import { Credits } from "./credits"
 import { Link } from "./link"
 import { VersionLink } from "./version"
+import { Replay } from "./replay"
 
 export const App = () => {
   return (
@@ -20,7 +21,7 @@ export const App = () => {
           <VersionLink
             major="2"
             minor="2"
-            patch="6"
+            patch="7"
             target="_blank"
             rel="noreferrer noopener"
             href="https://www.npmjs.com/package/use-scramble"
@@ -31,7 +32,6 @@ export const App = () => {
         <div className="prose">
           <h1>useScramble</h1>
           <Intro />
-
           <Example
             description={() => (
               <p>
@@ -43,14 +43,21 @@ export const App = () => {
             levas={["speed", "tick", "step", "overflow", "scramble", "seed", "range", "overdrive"]}
           />
           <h2>Usage</h2>
-
           <p>
             Install the npm package, import the <code>useScramble</code> hook, and call it within your component body. With its return
             value, the hook exposes a react <code>ref</code>, which you need to apply on the target html element, for the animation to take
             over.
           </p>
           <Usage />
-
+          <header className="prop-heading">
+            <h3>Replay programmatically</h3>
+          </header>
+          <p>
+            The hook in its return value, provides a <code>replay</code> function, that you can call programmatically and replay the
+            animation.
+          </p>
+          <Link label="1.21 gigawatts!" href="#" />
+          <Replay />
           <h2>Configuration</h2>
           <header className="prop-heading">
             <h3>speed</h3>
@@ -62,9 +69,8 @@ export const App = () => {
           </p>
           <p>
             Speed of value <code>1</code> means a character can scramble up to 60 times a second. Speed <code>0</code> will pause the
-            animation
+            animation.
           </p>
-
           <Example
             params={{
               overdrive: false,
@@ -89,7 +95,6 @@ export const App = () => {
             A higher value means It works in the opposite way to <code>speed</code>, slowing down the animation, but does not affect how
             fast each position will randomize.
           </p>
-
           <Example
             params={{
               overdrive: false,
@@ -176,7 +181,6 @@ export const App = () => {
             animation. When <code>seed</code> is configured, the animation will randomly select additional positions ahead of the animation
             and redraw to random unicode codepoints, until the animation flow reaches there.
           </p>
-
           <Example
             params={{
               overdrive: false,
@@ -201,7 +205,6 @@ export const App = () => {
             If your text is of any <b>non-latin script</b>, or you want to customize the visual effect of the animation, you can provide a
             custom <code>2‑tupple</code>, representing the unicode codepoint range, you want the scrambler to choose random characters from.
           </p>
-
           <Example
             params={{
               overdrive: false,
@@ -243,7 +246,7 @@ export const App = () => {
           <p>
             With <code>overdrive</code> mode enabled, the animation will flow across the text contents, and replace every character
             position, with an <code>underscore</code>, or unicode <code>95</code> character. <code>overdrive</code> runs as quickly as
-            possibly, and independently to the <code>speed</code> and <code>tick</code> parameters
+            possibly, and independently to the <code>speed</code> and <code>tick</code> parameters.
           </p>
           <Example
             params={{
@@ -276,6 +279,31 @@ export const App = () => {
             }}
             levas={["overdriveNumber"]}
           />
+          <header className="prop-heading">
+            <h3>playOnMount</h3> <code>boolean</code>
+          </header>
+          <p>
+            When creating interactive elements, or want to play the animation manually on user interaction or other events, you can disable
+            the first animation, by setting <code>playOnMount</code> to <code>true</code>.
+          </p>
+          <header className="prop-heading">
+            <h3>onAnimationStart</h3> <code>function</code>
+          </header>
+          <p>Callback triggered when the animation starts</p>
+          <header className="prop-heading">
+            <h3>onAnimationFrame</h3> <code>function</code>
+          </header>
+          <p>Callback triggered on every animation redraw</p>
+          <header className="prop-heading">
+            <h3>onAnimationEnd</h3> <code>function</code>
+          </header>
+          <p>Callback triggered when the animation has finished</p>
+          <h2>Reduced Motion</h2>
+          <p>
+            People experiencing vertigo or motion sensitivities, can request to reduce the amount of non-essential motion, through their
+            operating system configuration. At the moment, the animation is entirely disabled when `prefers-reduced-motion` is enabled.
+          </p>
+
           <h2>Unicode</h2>
           <Unicode />
           <h2>Credits</h2>

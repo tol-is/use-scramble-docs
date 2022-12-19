@@ -113,7 +113,7 @@ export const useScrambledLeva = ({ levas, params }: ScrambleLevaProps) => {
           copy(`
           const { ref } = useScramble({
             text: "${sample}",
-            range: ${existsOrDefault(values[`${id}range`], params.range, defaults.range)},
+            range: [${existsOrDefault(values[`${id}range`], params.range, defaults.range)}],
             speed: ${existsOrDefault(values[`${id}speed`], params.speed, defaults.speed)},
             tick: ${existsOrDefault(values[`${id}tick`], params.tick, defaults.tick)},
             step: ${existsOrDefault(values[`${id}step`], params.step, defaults.step)},
