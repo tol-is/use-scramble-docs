@@ -283,8 +283,9 @@ export const App = () => {
             <h3>playOnMount</h3> <code>boolean</code>
           </header>
           <p>
-            When creating interactive elements, or want to play the animation manually on user interaction or other events, you can disable
-            the first animation, by setting <code>playOnMount</code> to <code>true</code>.
+            By default, the animation will start playing, as soon as a text value is provided. When creating interactive elements, and need
+            to play/replay the animation manually on user interaction or any side effect, you can disable the first animation, by setting{" "}
+            <code>playOnMount</code> to <code>false</code>.
           </p>
           <header className="prop-heading">
             <h3>onAnimationStart</h3> <code>function</code>
