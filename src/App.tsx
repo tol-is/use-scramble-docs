@@ -311,9 +311,11 @@ export const App = () => {
 
           <h2>Feedback</h2>
           <p>
-            If you have ideas, suggestions or found a bug, please open an issue on{" "}
-            <Link label="github" href="https://github.com/tol-is/use-scramble/issues" target="_blank" rel="noreferrer noopener" />. If
-            you're using the library talk to me on{" "}
+            If you have ideas, suggestions or found a bug, please open a github{" "}
+            <Link label="issue" href="https://github.com/tol-is/use-scramble/issues" target="_blank" rel="noreferrer noopener" /> or start a
+            new{" "}
+            <Link label="discussion" href="https://github.com/tol-is/use-scramble/discussions" target="_blank" rel="noreferrer noopener" />.
+            If you're using the library talk to me on{" "}
             <Link label="twitter" href="https://twitter.com/tol__is" target="_blank" rel="noreferrer noopener" />.
           </p>
         </div>

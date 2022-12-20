@@ -17,11 +17,12 @@ const data = [
     "English translation of Iphigenia in Aulis, written 410 B.C. By Euripides.",
     "http://classics.mit.edu/Euripides/iphi_aul.html",
   ],
-  ["Poimandres", "For Leva, the most powerful parametric gui.", "https://github.com/pmndrs"],
+  ["Poimandres", "For Leva, the most powerful parametric gui.", "https://github.com/pmndrs/"],
+  ["Radix", "For the base color scheme", "https://www.radix-ui.com/colors/"],
   ["TSDX", "TypeScript package development.", "https://tsdx.io/"],
   ["Parcel", "The zero configuration website bundler.", "https://parceljs.org/"],
-  ["React Syntax Highlighter", "Awesome highlighted code blocks.", "https://github.com/react-syntax-highlighter"],
-  ["Copy To Clipboard", "That thing that copies text to the clipboard.", "https://github.com/sudodoki/copy-to-clipboard"],
+  ["React Syntax Highlighter", "Awesome highlighted code blocks.", "https://github.com/react-syntax-highlighter/"],
+  ["Copy To Clipboard", "That thing that copies text to the clipboard.", "https://github.com/sudodoki/copy-to-clipboard/"],
   ["Monolisa", "My favorite coding font.", "https://www.monolisa.dev/"],
 ]
 
