@@ -21,7 +21,7 @@ export const App = () => {
           <VersionLink
             major="2"
             minor="2"
-            patch="7"
+            patch="8"
             target="_blank"
             rel="noreferrer noopener"
             href="https://www.npmjs.com/package/use-scramble"
@@ -40,7 +40,7 @@ export const App = () => {
               </p>
             )}
             params={{ overdrive: false, overflow: false, step: 5 }}
-            levas={["speed", "tick", "step", "overflow", "scramble", "seed", "range", "overdrive"]}
+            levas={["speed", "tick", "step", "overflow", "scramble", "seed", "chance", "range", "overdrive"]}
           />
           <h2>Usage</h2>
           <p>
@@ -78,6 +78,7 @@ export const App = () => {
               scramble: 2,
               step: 1,
               seed: 0,
+              chance: 1,
               tick: 1,
               overflow: false,
             }}
@@ -102,6 +103,7 @@ export const App = () => {
               scramble: 18,
               step: 1,
               seed: 0,
+              chance: 1,
               tick: 5,
               overflow: false,
             }}
@@ -125,6 +127,7 @@ export const App = () => {
               scramble: 0,
               step: 5,
               seed: 0,
+              chance: 1,
               tick: 1,
               overflow: false,
             }}
@@ -145,6 +148,7 @@ export const App = () => {
               scramble: 3,
               step: 1,
               seed: 0,
+              chance: 1,
               tick: 1,
               overflow: false,
             }}
@@ -167,6 +171,7 @@ export const App = () => {
               scramble: 42,
               step: 1,
               seed: 0,
+              chance: 1,
               tick: 1,
               overflow: true,
             }}
@@ -188,11 +193,35 @@ export const App = () => {
               scramble: 2,
               step: 5,
               seed: 1,
+              chance: 1,
               tick: 1,
               overflow: true,
             }}
             levas={["seed"]}
           />
+
+          <header className="prop-heading">
+            <h3>chance</h3>
+            <code>number (0 - 1)</code>
+          </header>
+          <p>
+            By default <code>chance</code> is set to <code>1</code> meaning a position has 100% chance to randomize. Reducing the{" "}
+            <code>chance</code> slightly, can make the animation feel more natural, or at least slighly less chaotic.
+          </p>
+          <Example
+            params={{
+              overdrive: false,
+              speed: 0.4,
+              scramble: 10,
+              step: 5,
+              seed: 1,
+              chance: 0.8,
+              tick: 1,
+              overflow: false,
+            }}
+            levas={["chance"]}
+          />
+
           <header className="prop-heading">
             <h3>range</h3>
             <code>[number, number]</code>
@@ -212,6 +241,7 @@ export const App = () => {
               scramble: 10,
               step: 4,
               seed: 0,
+              chance: 1,
               tick: 1,
               range: [33, 47],
               overflow: false,
@@ -234,6 +264,7 @@ export const App = () => {
               step: 3,
               seed: 0,
               tick: 2,
+              chance: 1,
               range: [45, 46, 95],
               overflow: false,
             }}
@@ -256,6 +287,7 @@ export const App = () => {
               step: 6,
               seed: 0,
               tick: 1,
+              chance: 1,
               overflow: true,
             }}
             levas={["overdrive"]}
@@ -274,6 +306,7 @@ export const App = () => {
               scramble: 5,
               step: 6,
               seed: 0,
+              chance: 1,
               tick: 1,
               overflow: true,
             }}
