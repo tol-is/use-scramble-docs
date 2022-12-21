@@ -5,6 +5,7 @@ import { useCreateStore, useControls, buttonGroup } from "leva"
 import copy from "copy-to-clipboard"
 
 import { useScramble, UseScrambleProps } from "use-scramble"
+import { useVersion } from "./version"
 
 function getRandomInt(min: number, max: number) {
   return Math.floor(Math.random() * (max - min) + min)
@@ -102,6 +103,8 @@ export const useScrambledLeva = ({ levas, params }: ScrambleLevaProps) => {
     overflow: existsOrDefault(values[`${id}overflow`], params.overflow, defaults.overflow),
   })
 
+  const { setText } = useVersion()
+
   useControls(
     () => ({
       " ": buttonGroup({
@@ -128,6 +131,8 @@ export const useScrambledLeva = ({ levas, params }: ScrambleLevaProps) => {
             overflow: ${existsOrDefault(values[`${id}overflow`], params.overflow, defaults.overflow)},
           })
           `)
+
+          setText && setText("Copied!")
         },
 
         reset: () => {

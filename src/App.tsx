@@ -6,22 +6,23 @@ import { Usage } from "./usage"
 import { Unicode } from "./unicode"
 import { Credits } from "./credits"
 import { Link } from "./link"
-import { VersionLink } from "./version"
+import { VersionLink, VersionProvider } from "./version"
 import { Replay } from "./replay"
+import { Code } from "./code"
 
 export const App = () => {
   return (
-    <>
+    <VersionProvider>
       <header>
         <code>
-          <span className="token">npm install</span> use-scramble
+          <span className="token">npm i</span> use-scramble
         </code>
 
         <div className="links">
           <VersionLink
             major="2"
             minor="2"
-            patch="9"
+            patch="10"
             target="_blank"
             rel="noreferrer noopener"
             href="https://www.npmjs.com/package/use-scramble"
@@ -205,8 +206,8 @@ export const App = () => {
             <code>number (0 - 1)</code>
           </header>
           <p>
-            By default <code>chance</code> is set to <code>1</code> meaning a position has 100% chance to randomize. Reducing the{" "}
-            <code>chance</code> slightly, can make the animation feel more natural, or at least slighly less chaotic.
+            By default <code>chance</code> is set to <code>1</code> meaning any position has <code>100%</code> chance to randomize. Reducing
+            the <code>chance</code> slightly, can make the animation feel more natural, or just slighly less chaotic.
           </p>
           <Example
             params={{
@@ -320,21 +321,58 @@ export const App = () => {
             to play/replay the animation manually on user interaction or any side effect, you can disable the first animation, by setting{" "}
             <code>playOnMount</code> to <code>false</code>.
           </p>
+          <Code
+            code={`useScramble({ 
+  playOnMount: false
+});`}
+            language="js"
+          />
+          <header className="prop-heading">
+            <h3>ignore</h3> <code>string[]</code>
+          </header>
+          <p>
+            Use the <code>ignore</code> parameter, to provide an array of characters, that will not be randomized. It is recommended to
+            always include a space character to resenmble the final shape of the text, while the animation is playing.
+          </p>
+          <Code
+            code={`useScramble({ 
+  ignore: [" ", "!", "?"]
+});`}
+            language="js"
+          />
           <header className="prop-heading">
             <h3>onAnimationStart</h3> <code>function</code>
           </header>
-          <p>Callback triggered when the animation starts</p>
+          <p>Callback triggered when the animation starts.</p>
+          <Code
+            code={`useScramble({ 
+  onAnimationStart: () => console.log('animation started')
+});`}
+            language="js"
+          />
           <header className="prop-heading">
             <h3>onAnimationFrame</h3> <code>function</code>
           </header>
-          <p>Callback triggered on every animation redraw</p>
+          <p>Callback triggered on every animation redraw.</p>
+          <Code
+            code={`useScramble({ 
+  onAnimationFrame: (result) => console.log(result)
+});`}
+            language="js"
+          />
           <header className="prop-heading">
             <h3>onAnimationEnd</h3> <code>function</code>
           </header>
-          <p>Callback triggered when the animation has finished</p>
+          <p>Callback triggered when the animation has finished.</p>
+          <Code
+            code={`useScramble({ 
+  onAnimationEnd: () => console.log('animation ended')
+});`}
+            language="js"
+          />
           <h2>Reduced Motion</h2>
           <p>
-            People experiencing vertigo or are sensisitve to motion, can request to reduce the amount of non-essential motion, through their
+            People experiencing vertigo or are sensitive to motion, can request to reduce the amount of non-essential motion, through their
             operating system configuration. At the moment, <code>prefers-reduced-motion</code> will simply disable the animation.
           </p>
 
@@ -357,6 +395,6 @@ export const App = () => {
       <footer>
         <Link href="https://tol.is" label="tol.is" target="_blank" />
       </footer>
-    </>
+    </VersionProvider>
   )
 }

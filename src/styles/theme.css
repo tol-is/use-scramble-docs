@@ -118,21 +118,26 @@ h4 {
 }
 
 a.version {
+  background-color: var(--colors-bg);
   padding: 4px 6px;
   border: 1px solid var(--colors-hiContrast);
   color: var(--colors-hiContrast);
   outline-offset: 3px;
+  position: fixed;
+  z-index: 999;
+  right: calc(var(--space-sm) + 3px);
 }
 
 a.version:hover,
-a.version:focus {
+a.version:focus,
+a.version[data-toast="true"] {
   border: 1px solid var(--colors-accent);
   color: var(--colors-accent);
   outline: none;
 }
 
-a.version > span {
-  pointer-events: none;
+a.version[data-toast="true"] {
+  animation: toast 0.5s ease-out;
 }
 
 #root > header a {
@@ -298,4 +303,32 @@ li {
   font-size: 14px;
   font-family: var(--font-mono);
   color: var(--colors-hiContrast);
+}
+
+[data-block="code"] {
+  position: relative;
+}
+[data-block="code"] button {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  background-color: transparent;
+  color: var(--colors-loContrast);
+}
+[data-block="code"] button:hover,
+[data-block="code"] button:focus {
+  color: var(--colors-hiContrast);
+}
+[data-block="code"] button:active {
+  transform: translateX(1px) translateY(1px);
+}
+
+@keyframes toast {
+  0% {
+    transform: scale(1.15);
+  }
+
+  100% {
+    transform: scale(1);
+  }
 }
