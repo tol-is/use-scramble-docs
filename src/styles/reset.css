@@ -50,6 +50,9 @@ select {
   appearance: none;
   font: inherit;
   border: none;
+  background: transparent;
+  padding: 0;
+  font-weight: 400;
 }
 
 img:not([alt]) {

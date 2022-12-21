@@ -7,6 +7,7 @@ import { Unicode } from "./unicode"
 import { Credits } from "./credits"
 import { Link } from "./link"
 import { VersionLink, VersionProvider } from "./version"
+import { NpmInstall } from "./npm-install"
 import { Replay } from "./replay"
 import { Code } from "./code"
 
@@ -14,9 +15,7 @@ export const App = () => {
   return (
     <VersionProvider>
       <header>
-        <code>
-          <span className="token">npm i</span> use-scramble
-        </code>
+        <NpmInstall />
 
         <div className="links">
           <VersionLink
@@ -164,7 +163,6 @@ export const App = () => {
             configures how many times every position must randomize, before the final character is rendered, and is only affected by the{" "}
             <code>speed</code> control.
           </p>
-          <p></p>
           <Example
             params={{
               overdrive: false,

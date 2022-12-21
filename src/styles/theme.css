@@ -53,6 +53,15 @@ h1 {
   font-feature-settings: "ss01";
 }
 
+button.npm-install {
+  font-family: var(--font-mono);
+  font-size: 14px;
+}
+button.npm-install:focus {
+  outline-offset: 3px;
+  outline: 1px solid var(--colors-accent);
+}
+
 h2 {
   font-size: calc(20px+ 2vmax);
   font-weight: 600;
