@@ -1,7 +1,12 @@
 import React, { useRef, useState } from "react"
 import { useScramble } from "use-scramble"
 
-const texts = ["A react hook for random text animations.", "High performance and small payload (<1KB)", "Yesterday's tomorrows, today."]
+const texts = [
+  "A react hook for random text animations.",
+  "High performance controlled chaos",
+  "Tiny payload, ~1KB",
+  "Yesterday's tomorrows, today.",
+]
 
 export const Intro = () => {
   const [index, setIndex] = useState(0)
