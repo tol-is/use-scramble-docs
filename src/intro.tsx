@@ -26,5 +26,5 @@ export const Intro = () => {
     },
   })
 
-  return <p aria-label={texts[index]} ref={ref} onClick={replay} />
+  return <p className="intro" aria-label={texts[index]} ref={ref} onClick={replay} />
 }
