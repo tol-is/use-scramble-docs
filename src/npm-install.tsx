@@ -1,6 +1,7 @@
 import React, { useState, useContext, useEffect } from "react"
 import { useScramble } from "use-scramble"
 import { useVersion } from "./version"
+import copy from "copy-to-clipboard"
 
 export const NpmInstall = () => {
   const { setText } = useVersion()
@@ -23,6 +24,7 @@ export const NpmInstall = () => {
   }
 
   const handleClick = () => {
+    copy(`npm install use-scramble`)
     setText && setText("Copied!")
     animate()
   }
