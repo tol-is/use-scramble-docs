@@ -1,4 +1,4 @@
-import { useState, useId, useEffect } from "react"
+import { useState, useId, useEffect, useRef } from "react"
 import tragedy from "iphigenia-in-aulis"
 
 import { useCreateStore, useControls, buttonGroup } from "leva"
@@ -68,8 +68,59 @@ export const useScrambledLeva = ({ levas, params }: ScrambleLevaProps) => {
   const id = useId()
 
   const [sample, setSample] = useState(getRandomText())
+  const [stateParams, setStateParams] = useState({})
 
   const store = useCreateStore()
+
+  const { ref, replay } = useScramble({
+    text: sample,
+    playOnMount: false,
+    range: existsOrDefault(stateParams[`${id}range`], params.range, defaults.range),
+    speed: existsOrDefault(stateParams[`${id}speed`], params.speed, defaults.speed),
+    tick: existsOrDefault(stateParams[`${id}tick`], params.tick, defaults.tick),
+    step: existsOrDefault(stateParams[`${id}step`], params.step, defaults.step),
+    scramble: existsOrDefault(stateParams[`${id}scramble`], params.scramble, defaults.scramble),
+    chance: existsOrDefault(stateParams[`${id}chance`], params.chance, defaults.chance),
+    seed: existsOrDefault(stateParams[`${id}seed`], params.seed, defaults.seed),
+    overdrive: existsOrDefault(stateParams[`${id}overdrive`], params.overdrive, defaults.overdrive),
+    overflow: existsOrDefault(stateParams[`${id}overflow`], params.overflow, defaults.overflow),
+  })
+
+  useControls(
+    () => ({
+      " ": buttonGroup({
+        replay: () => {
+          replay()
+        },
+        randomize: () => {
+          const sample = getRandomText()
+          setSample(sample)
+        },
+
+        copy: () => {
+          copy(`
+          const { ref } = useScramble({
+            text: "${sample}",
+            range: [${existsOrDefault(stateParams[`${id}range`], params.range, defaults.range)}],
+            speed: ${existsOrDefault(stateParams[`${id}speed`], params.speed, defaults.speed)},
+            tick: ${existsOrDefault(stateParams[`${id}tick`], params.tick, defaults.tick)},
+            step: ${existsOrDefault(stateParams[`${id}step`], params.step, defaults.step)},
+            scramble: ${existsOrDefault(stateParams[`${id}scramble`], params.scramble, defaults.scramble)},
+            seed: ${existsOrDefault(stateParams[`${id}seed`], params.seed, defaults.seed)},
+            chance: ${existsOrDefault(stateParams[`${id}chance`], params.chance, defaults.chance)},
+            overdrive: ${existsOrDefault(stateParams[`${id}overdrive`], params.overdrive, defaults.overdrive)},
+            overflow: ${existsOrDefault(stateParams[`${id}overflow`], params.overflow, defaults.overflow)},
+          })
+          `)
+
+          setText && setText("Copied!")
+        },
+      }),
+    }),
+
+    { store: store },
+    [replay, levas, stateParams],
+  )
 
   const [values, setLeva] = useControls(
     () => {
@@ -89,66 +140,29 @@ export const useScrambledLeva = ({ levas, params }: ScrambleLevaProps) => {
     { store: store },
   ) as any
 
-  const { ref, replay } = useScramble({
-    text: sample,
-    playOnMount: false,
-    range: existsOrDefault(values[`${id}range`], params.range, defaults.range),
-    speed: existsOrDefault(values[`${id}speed`], params.speed, defaults.speed),
-    tick: existsOrDefault(values[`${id}tick`], params.tick, defaults.tick),
-    step: existsOrDefault(values[`${id}step`], params.step, defaults.step),
-    scramble: existsOrDefault(values[`${id}scramble`], params.scramble, defaults.scramble),
-    chance: existsOrDefault(values[`${id}chance`], params.chance, defaults.chance),
-    seed: existsOrDefault(values[`${id}seed`], params.seed, defaults.seed),
-    overdrive: existsOrDefault(values[`${id}overdrive`], params.overdrive, defaults.overdrive),
-    overflow: existsOrDefault(values[`${id}overflow`], params.overflow, defaults.overflow),
-  })
+  // useControls(
+  //   () => ({
+  //     "  ": buttonGroup({
+  //       reset: () => {
+  //         const p = levas.reduce((res, cur) => {
+  //           res[id + cur] = params[cur]
+  //           return res
+  //         }, {}) as never
+
+  //         setLeva(p)
+  //       },
+  //     }),
+  //   }),
+
+  //   { store: store },
+  //   [setLeva, levas, params],
+  // )
+
+  useEffect(() => {
+    setStateParams(values)
+  }, [values])
 
   const { setText } = useVersion()
-
-  useControls(
-    () => ({
-      " ": buttonGroup({
-        replay: () => {
-          replay()
-        },
-        randomize: () => {
-          const sample = getRandomText()
-          setSample(sample)
-        },
-
-        copy: () => {
-          copy(`
-          const { ref } = useScramble({
-            text: "${sample}",
-            range: [${existsOrDefault(values[`${id}range`], params.range, defaults.range)}],
-            speed: ${existsOrDefault(values[`${id}speed`], params.speed, defaults.speed)},
-            tick: ${existsOrDefault(values[`${id}tick`], params.tick, defaults.tick)},
-            step: ${existsOrDefault(values[`${id}step`], params.step, defaults.step)},
-            scramble: ${existsOrDefault(values[`${id}scramble`], params.scramble, defaults.scramble)},
-            seed: ${existsOrDefault(values[`${id}seed`], params.seed, defaults.seed)},
-            chance: ${existsOrDefault(values[`${id}chance`], params.chance, defaults.chance)},
-            overdrive: ${existsOrDefault(values[`${id}overdrive`], params.overdrive, defaults.overdrive)},
-            overflow: ${existsOrDefault(values[`${id}overflow`], params.overflow, defaults.overflow)},
-          })
-          `)
-
-          setText && setText("Copied!")
-        },
-
-        reset: () => {
-          const p = levas.reduce((res, cur) => {
-            res[id + cur] = params[cur]
-            return res
-          }, {}) as never
-
-          setLeva(p)
-        },
-      }),
-    }),
-
-    { store: store },
-    [replay, levas, values],
-  )
 
   return { store, ref, replay }
 }
