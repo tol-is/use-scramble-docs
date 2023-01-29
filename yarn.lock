@@ -2014,10 +2014,10 @@ update-browserslist-db@^1.0.9:
     escalade "^3.1.1"
     picocolors "^1.0.0"
 
-use-scramble@^2.2.11:
-  version "2.2.11"
-  resolved "https://registry.yarnpkg.com/use-scramble/-/use-scramble-2.2.11.tgz#23b99a49c22cfeebcb8bd1d99813589fc0ce15f6"
-  integrity sha512-HdWeYLMp+OSoS+15xyoQuNM+mxZL7gJCv1wk+WjYIE5n4wZHviBIj3AFhgpHiuonIlZiUStMPivLhjDCwqx8Sg==
+use-scramble@^2.2.12:
+  version "2.2.12"
+  resolved "https://registry.yarnpkg.com/use-scramble/-/use-scramble-2.2.12.tgz#eab8e865efe282b9dde6468c22515f1201e5c430"
+  integrity sha512-/LDu+MJAvfqRd82VJnIBj6xKnGlsJkVVdnJmdXvGtAOxGpMXi6UhfKtve7qbgnIRQELtOp4nPe8vCX7SxYv9KQ==
 
 utility-types@^3.10.0:
   version "3.10.0"
