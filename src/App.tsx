@@ -21,7 +21,7 @@ export const App = () => {
           <VersionLink
             major="2"
             minor="2"
-            patch="12"
+            patch="14"
             target="_blank"
             rel="noreferrer noopener"
             href="https://www.npmjs.com/package/use-scramble"
