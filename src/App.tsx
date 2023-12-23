@@ -393,7 +393,7 @@ export const App = () => {
       <footer>
         <Link href="https://tol.is" label="tol.is" target="_blank" />
       </footer>
-      <Vercel.Analytics />
+      <Analytics />
 
     </VersionProvider>
   )
