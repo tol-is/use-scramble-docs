@@ -1,4 +1,5 @@
 import React from "react"
+import { Analytics } from '@vercel/analytics/react';
 
 import { Intro } from "./intro"
 import { Example } from "./example"
@@ -392,6 +393,8 @@ export const App = () => {
       <footer>
         <Link href="https://tol.is" label="tol.is" target="_blank" />
       </footer>
+      <Analytics />
+
     </VersionProvider>
   )
 }

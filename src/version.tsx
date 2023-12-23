@@ -9,7 +9,7 @@ const VersionContext = React.createContext<{ text: string | null; setText: null 
   setText: null,
 })
 
-export const VersionProvider = ({ children }) => {
+export const VersionProvider = ({ children }: any) => {
   const [text, setText] = React.useState<string | null>(null)
 
   return <VersionContext.Provider value={{ text, setText }}>{children}</VersionContext.Provider>
